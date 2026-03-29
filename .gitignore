@@ -1,0 +1,20 @@
+.venv
+venv/
+env/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+
+# Frontend
+node_modules/
+.next/
+out/
+build/
+.vercel/
+
+# IDEs
+.idea/
+.vscode/
+.qodo/
+tsc_errors.txt
