@@ -7,7 +7,7 @@ AutoResearch Agent is a powerful, production-ready AI research engine that autom
 > [!IMPORTANT]
 > **Built by Team TechLions**: Ankur Verma, Shivam Singh, and Aditya Ojha (IIT Patna).
 
-🚀 **Live Demo on Vercel**: [AutoResearch Agent](https://shivam-singhs-projects-0edffa15.vercel.app)
+🚀 **Live Demo on Vercel**: [AutoResearch Agent](https://autoresearch-agent-shivam.vercel.app)
 
 ---
 
