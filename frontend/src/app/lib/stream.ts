@@ -1,5 +1,8 @@
 import { AgentEvent, ResearchReport } from "../types";
 
+// Auto-detect environments. In development, defaults to local backend.
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
 export async function startResearch(
   query: string,
   onEvent: (event: AgentEvent) => void,
@@ -8,22 +11,20 @@ export async function startResearch(
 ) {
   try {
     // First POST to start research
-    const res = await fetch("http://localhost:8000/research", {
+    const res = await fetch(`${API_URL}/research`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query, max_sources: 8, depth: "standard" })
     });
     
     if (!res.ok) {
-      throw new Error(`Failed to start research: ${res.statusText}`);
+      throw new Error(`Failed to start research (Status ${res.status}): ${res.statusText}`);
     }
     
     const { job_id } = await res.json();
     
     // Then connect to SSE stream
-    const eventSource = new EventSource(
-      `http://localhost:8000/research/${job_id}/stream`
-    );
+    const eventSource = new EventSource(`${API_URL}/research/${job_id}/stream`);
     
     eventSource.onmessage = (e) => {
       try {

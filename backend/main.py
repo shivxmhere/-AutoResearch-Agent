@@ -69,7 +69,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Allow all for hackathon
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -203,11 +203,12 @@ async def stream_research(job_id: str):
 
             # Send the final report
             report = {}
-            if final_state and "final_report" in final_state:
-                report = final_state["final_report"]
-            elif final_state:
-                # Walk the accumulated state
-                report = final_state
+            if final_state is not None:
+                if isinstance(final_state, dict) and "final_report" in final_state:
+                    report = final_state["final_report"]
+                else:
+                    # Use the accumulated state itself if not nested
+                    report = final_state
 
             yield {
                 "data": json.dumps({
