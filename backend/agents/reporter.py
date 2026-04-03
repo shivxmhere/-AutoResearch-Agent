@@ -16,7 +16,7 @@ def get_llm():
         temperature=0.1,
         max_tokens=2048,
         groq_api_key=os.getenv("GROQ_API_KEY"),
-    )
+    ).bind(response_format={"type": "json_object"})
 
 
 def reporter_node(state: dict) -> dict:
