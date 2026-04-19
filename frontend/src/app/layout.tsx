@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import CustomCursor from "./components/CustomCursor";
-import ParticleCanvas from "./components/ParticleCanvas";
-import { ToastProvider } from "./components/ToastContext";
 
 export const metadata: Metadata = {
-  title: "AutoResearch Agent — AI-Powered Research",
-  description: "Autonomous multi-agent AI research system powered by LangGraph + LLaMA 3",
+  title: "AgentVerse — The internet of agents",
+  description: "AI Agents Marketplace — where every task finds its mind.",
 };
 
 export default function RootLayout({
@@ -17,11 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ToastProvider>
-          <ParticleCanvas />
-          <CustomCursor />
-          {children}
-        </ToastProvider>
+        {children}
       </body>
     </html>
   );

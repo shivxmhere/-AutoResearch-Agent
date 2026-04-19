@@ -10,11 +10,11 @@ from typing import TypedDict, Annotated
 from langgraph.graph import StateGraph, END
 from langchain_groq import ChatGroq
 
-from agents.searcher import search_node
-from agents.reader import reader_node
-from agents.analyst import analyst_node
-from agents.fact_checker import fact_check_node
-from agents.reporter import reporter_node
+from backend.agents.autoresearch.searcher import search_node
+from backend.agents.autoresearch.reader import reader_node
+from backend.agents.autoresearch.analyst import analyst_node
+from backend.agents.autoresearch.fact_checker import fact_check_node
+from backend.agents.autoresearch.reporter import reporter_node
 
 
 # ─── State Definition ───────────────────────────────────────────────
