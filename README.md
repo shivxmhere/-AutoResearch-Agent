@@ -1,6 +1,9 @@
 # AgentVerse
 ### The internet of agents — where every task finds its mind.
 
+🚀 **Live Demo:** https://frontend-puce-nu-66.vercel.app
+⚙️ **API:** https://agentverse-backend.vercel.app
+
 > HackIndia Spark 6 × NIT Delhi 2026 | AI Agents Marketplace Track | Team TechLions
 
 AgentVerse is a full-stack AI agents marketplace where developers publish autonomous AI agents 

@@ -18,3 +18,4 @@ build/
 .vscode/
 .qodo/
 tsc_errors.txt
+.vercel

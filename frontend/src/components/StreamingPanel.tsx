@@ -36,7 +36,7 @@ export default function StreamingPanel({ agentName, query, agentId, onComplete }
   useEffect(() => {
     // We send a POST request to run, then start listening to stream
     // Since we mock backend behaviour:
-    const host = process.env.NEXT_PUBLIC_API_URL || "";
+    const host = process.env.NEXT_PUBLIC_API_URL || "https://agentverse-backend.vercel.app";
     let eventSource: EventSource;
 
     const startRun = async () => {

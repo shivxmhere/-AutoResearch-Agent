@@ -12,7 +12,7 @@ export default function ArenaPage() {
   const [isRacing, setIsRacing] = useState(false);
 
   useEffect(() => {
-    const host = process.env.NEXT_PUBLIC_API_URL || '';
+    const host = process.env.NEXT_PUBLIC_API_URL || 'https://agentverse-backend.vercel.app';
     const url = `${host}/api/agents`;
     fetch(url)
       .then(res => res.json())

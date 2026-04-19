@@ -8,7 +8,7 @@ export default function MarketplacePage() {
   const [agents, setAgents] = useState<any[]>([]);
 
   useEffect(() => {
-    const host = process.env.NEXT_PUBLIC_API_URL || '';
+    const host = process.env.NEXT_PUBLIC_API_URL || 'https://agentverse-backend.vercel.app';
     const url = `${host}/api/agents`;
     fetch(url)
       .then(res => res.json())

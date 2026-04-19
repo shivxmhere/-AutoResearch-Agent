@@ -14,7 +14,7 @@ export default function AgentVerseHome() {
 
   useEffect(() => {
     // Fetch agents on mount
-    const host = process.env.NEXT_PUBLIC_API_URL || '';
+    const host = process.env.NEXT_PUBLIC_API_URL || 'https://agentverse-backend.vercel.app';
     fetch(`${host}/api/agents`)
       .then(res => res.json())
       .then(data => {
@@ -26,7 +26,7 @@ export default function AgentVerseHome() {
   const handleSearch = async (q: string) => {
     setQuery(q);
     try {
-      const host = process.env.NEXT_PUBLIC_API_URL || '';
+      const host = process.env.NEXT_PUBLIC_API_URL || 'https://agentverse-backend.vercel.app';
       const url = `${host}/api/agents/match`;
       const res = await fetch(url, {
         method: 'POST',
